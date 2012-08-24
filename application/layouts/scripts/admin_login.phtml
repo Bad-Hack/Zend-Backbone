@@ -1,0 +1,17 @@
+<?php echo $this->doctype('HTML5');?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<?php echo $this->headTitle();?>
+<?php echo $this->headStyle()
+					->appendStyle($this->baseUrl('css/style.css'))
+					->appendStyle($this->baseUrl('css/reset.css'))
+					->appendStyle($this->baseUrl('css/structure.css'));
+?>
+<?php echo $this->headScript();?>
+</head>
+<body>
+	<?php
+	echo $this->layout ()->content;
+	?>
+</body>
+</html>

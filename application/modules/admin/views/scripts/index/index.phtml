@@ -1,0 +1,11 @@
+<?php
+	$baseUrl = $this->baseUrl();
+	$fc = Zend_Controller_Front::getInstance();
+	$currentModule = $fc->getRequest()->getParam('module');
+
+?>
+<script type="text/javascript">
+	window.baseUrl = "<?php echo $baseUrl ?>";
+	window.module = "<?php echo $currentModule;?>";
+</script>
+<script data-main="js/config" src="<?php echo $baseUrl; ?>/js/libs/require.min.js"></script>

@@ -1,0 +1,38 @@
+<?php echo $this->doctype('HTML5');?>
+<html>
+<head>
+<?php echo $this->headTitle("AppStart");?>
+<?php echo $this->headStyle()
+					->appendStyle($this->baseUrl('css/style.css'))
+					->appendStyle($this->baseUrl('css/reset.css'))
+					->appendStyle($this->baseUrl('css/structure.css'));
+?>
+<?php echo $this->headScript();?>
+</head>
+<body>
+<div id="wrapper">
+  <header id="header">
+    <h1></h1>
+    <nav id="top-nav" >
+      <ul>
+        <li class="current"><a href="#">Welcome <span><?php echo $zendRead->first_name." ".$zendRead->last_name ?></span> </a></li>
+        <li class="logout"><a href="#"  >Logout</a></li>
+      </ul>
+    </nav>
+    <div style="clear:both;"></div>
+  </header>
+  <!-- #header-->
+  <div style="clear:both;"></div>
+  <div id="content">
+    <?php echo $this->layout ()->content; ?>
+    <br />
+  </div>
+  <!-- #content-->
+  
+  <footer id="footer"> Copyright by AK Systems Inc 2012</footer>
+  <!-- #footer --> 
+  
+</div>
+<!-- #wrapper -->
+</body>
+</html>
