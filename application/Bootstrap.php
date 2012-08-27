@@ -1,6 +1,7 @@
 <?php
 
 use Doctrine\ORM\EntityManager, Doctrine\ORM\Configuration;
+
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
 	protected $modulesDirName = "";
 	protected function _initDoctrine() {
@@ -68,13 +69,5 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
 		array_shift ( $modules );
 		array_shift ( $modules );
 		return $modules;
-	}
-	protected function _initRestRoutes() {
-		$this->bootstrap ( 'FrontController' );
-		$frontController = Zend_Controller_Front::getInstance ();
-		$restRoute = new Zend_Rest_Route ( $frontController, array (), array (
-				'admin' => array('rest')
-		) );
-		$frontController->getRouter ()->addRoute ( 'adminrestroute', $restRoute );
 	}
 }
