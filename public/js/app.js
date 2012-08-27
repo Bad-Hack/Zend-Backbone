@@ -13,39 +13,17 @@ function($, _, Backbone) {
 		},
 		
 		handleRoutes : function(url){
-			require(["modules/"+ window.module +"/models/"+url],
-				function (adminView) {
-				    alert("adminView");
+			if(url == "" || url == null || url == "undefined")
+				url = "login";
+			
+			require(["modules/"+ window.module +"/frontviews/"+url],function(viewObject){
+				viewObject.render();
 			});
-		},
-		
-		adminLogin : function() {
-			alert("click here to login");
-		},
-		adminLogout : function() {
-			/*var self = this;
-			$.post(window.baseUrl + "/admin/rest/logout",  ,function(data){
-				self.isLoggedIn = data.isLoggedIn == "undefined" ? "false" : data.isLoggedIn;
-				app.navigate("/");
-			});*/
-		},
-		
-		adminHome : function (){
-			if(this.isLoggedIn){
-				alert("Welcome Home");
-			}
-			else{
-				alert("Please Login To go to home");
-				this.navigate("/login",true);
-			}
+			//$.getScript(window.baseUrl+"/js/modules/"+ window.module +"/frontviews/"+url+".js",function(data){eval(data);});
 		},
 		
 		// Check If The User is logged in as Admin
 		before : function() {
-			var self = this;
-			$.get(window.baseUrl + "/admin/rest/check-login",function(data){
-				self.isLoggedIn = data.isLoggedIn == "undefined" ? "false" : data.isLoggedIn;
-			});
 		}
 	});
 

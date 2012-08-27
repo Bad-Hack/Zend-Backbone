@@ -2,12 +2,16 @@
 <html>
 <head>
 <?php echo $this->headTitle();?>
-<?php echo $this->headStyle()->appendStyle($this->placeholder('css'));?>
+<?php echo $this->headLink()
+					->appendStylesheet($this->baseUrl('css/style.css'))
+					->appendStylesheet($this->baseUrl('css/reset.css'))
+					->appendStylesheet($this->baseUrl('css/structure.css'));
+?>
 <?php echo $this->headScript();?>
 </head>
 <body>
 	<?php
-	echo $this->layout ()->content;
+		echo $this->layout ()->content;
 	?>
 </body>
 </html>

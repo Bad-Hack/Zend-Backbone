@@ -2,10 +2,10 @@
 <html>
 <head>
 <?php echo $this->headTitle("AppStart");?>
-<?php echo $this->headStyle()
-					->appendStyle($this->baseUrl('css/style.css'))
-					->appendStyle($this->baseUrl('css/reset.css'))
-					->appendStyle($this->baseUrl('css/structure.css'));
+<?php echo $this->headLink()
+					->appendStylesheet($this->baseUrl('css/style.css'))
+					->appendStylesheet($this->baseUrl('css/reset.css'))
+					->appendStylesheet($this->baseUrl('css/structure.css'));
 ?>
 <?php echo $this->headScript();?>
 </head>
